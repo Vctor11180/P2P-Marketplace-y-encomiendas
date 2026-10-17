@@ -42,8 +42,10 @@ export function getSql() {
         tx_hash TEXT,
         actor TEXT,
         note TEXT,
+        photo_data_url TEXT,
         created_at TIMESTAMPTZ NOT NULL DEFAULT now()
       )`;
+      await sql`ALTER TABLE order_events ADD COLUMN IF NOT EXISTS photo_data_url TEXT`;
     })().catch((err) => {
       schemaReady = null;
       throw err;

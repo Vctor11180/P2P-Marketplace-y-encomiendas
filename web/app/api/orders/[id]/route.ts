@@ -23,7 +23,7 @@ export async function GET(
     FROM order_meta WHERE contract_id = ${cid} AND order_id = ${orderId}`;
   const [evidence] = await sql`SELECT carrier, guide_number, photo_data_url, evidence_hash, created_at
     FROM order_evidence WHERE contract_id = ${cid} AND order_id = ${orderId}`;
-  const events = await sql`SELECT kind, tx_hash, actor, note, created_at
+  const events = await sql`SELECT kind, tx_hash, actor, note, photo_data_url, created_at
     FROM order_events WHERE contract_id = ${cid} AND order_id = ${orderId}
     ORDER BY created_at ASC, id ASC`;
 
@@ -73,9 +73,13 @@ export async function POST(
     if (!EVENT_KINDS.includes(body.kind)) {
       return Response.json({ error: "Evento inválido" }, { status: 400 });
     }
-    await sql`INSERT INTO order_events (contract_id, order_id, kind, tx_hash, actor, note)
+    const disputePhoto: string | null = body.photoDataUrl ?? null;
+    if (disputePhoto && (!disputePhoto.startsWith("data:image/") || disputePhoto.length > 1_500_000)) {
+      return Response.json({ error: "Foto de reclamo inválida o muy grande" }, { status: 400 });
+    }
+    await sql`INSERT INTO order_events (contract_id, order_id, kind, tx_hash, actor, note, photo_data_url)
       VALUES (${cid}, ${orderId}, ${body.kind}, ${body.txHash ?? null}, ${body.actor ?? null},
-              ${body.note ? String(body.note).slice(0, 1000) : null})`;
+              ${body.note ? String(body.note).slice(0, 1000) : null}, ${disputePhoto})`;
   } else {
     return Response.json({ error: "Tipo inválido" }, { status: 400 });
   }

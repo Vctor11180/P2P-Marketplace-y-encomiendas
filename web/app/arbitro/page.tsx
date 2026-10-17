@@ -190,8 +190,17 @@ export default function ArbitroPage() {
                 onClick={() => loadOrder(Number(d.order_id))}
                 className="w-full text-left p-3 rounded-xl bg-slate-900 border border-rose-500/20 hover:border-rose-500/50 transition text-xs"
               >
-                <span className="font-mono font-bold text-rose-400">#{d.order_id}</span>{" "}
-                <span className="text-slate-200">{d.title ?? "Sin título"}</span>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <span className="font-mono font-bold text-rose-400">#{d.order_id}</span>{" "}
+                    <span className="text-slate-200">{d.title ?? "Sin título"}</span>
+                  </div>
+                  {d.photo_data_url && (
+                    <span className="px-2 py-0.5 rounded-full bg-rose-500/20 text-rose-300 text-[10px] font-medium">
+                      📷 Con foto
+                    </span>
+                  )}
+                </div>
                 {d.note && <p className="text-slate-400 mt-1 truncate">“{d.note}”</p>}
               </button>
             ))}
@@ -261,11 +270,31 @@ export default function ArbitroPage() {
 
           <div className="space-y-3 text-xs">
             {disputeEvent && (
-              <div className="p-3 rounded-xl bg-rose-500/5 border border-rose-500/20">
-                <span className="text-rose-400 font-semibold block mb-0.5">
-                  Motivo ({disputeEvent.actor === order.seller ? "vendedor" : "comprador"}):
-                </span>
-                <span className="text-slate-200">{disputeEvent.note || "Sin motivo registrado"}</span>
+              <div className="p-4 rounded-xl bg-rose-500/10 border border-rose-500/30 space-y-2">
+                <div className="flex items-center justify-between">
+                  <span className="text-rose-400 font-bold block">
+                    Reclamo del {disputeEvent.actor === order.seller ? "Vendedor" : "Comprador"}:
+                  </span>
+                  <span className="text-[10px] text-slate-400">
+                    {new Date(disputeEvent.created_at).toLocaleTimeString()}
+                  </span>
+                </div>
+                <p className="text-slate-200 font-medium">{disputeEvent.note || "Sin motivo registrado"}</p>
+                {disputeEvent.photo_data_url ? (
+                  <div className="mt-2 pt-2 border-t border-rose-500/20 space-y-1">
+                    <span className="text-rose-300 text-xs font-semibold block">
+                      📷 Foto de reclamo adjuntada por el Comprador:
+                    </span>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={disputeEvent.photo_data_url}
+                      alt="Foto del reclamo del comprador"
+                      className="w-full max-h-64 object-contain rounded-lg border border-rose-500/30 bg-slate-950"
+                    />
+                  </div>
+                ) : (
+                  <p className="text-[11px] text-slate-500 italic">El comprador no adjuntó foto de reclamo.</p>
+                )}
               </div>
             )}
 

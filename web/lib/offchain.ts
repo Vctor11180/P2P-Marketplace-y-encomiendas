@@ -22,6 +22,7 @@ export interface OrderEvent {
   tx_hash: string | null;
   actor: string | null;
   note: string | null;
+  photo_data_url?: string | null;
   created_at: string;
 }
 
@@ -36,6 +37,7 @@ export interface DisputeItem {
   order_id: string;
   actor: string | null;
   note: string | null;
+  photo_data_url?: string | null;
   created_at: string;
   title: string | null;
 }
@@ -81,7 +83,7 @@ export function saveEvidence(
 
 export function saveEvent(
   orderId: number,
-  ev: { kind: string; txHash?: string; actor?: string; note?: string }
+  ev: { kind: string; txHash?: string; actor?: string; note?: string; photoDataUrl?: string }
 ) {
   return post(orderId, { type: "event", ...ev });
 }

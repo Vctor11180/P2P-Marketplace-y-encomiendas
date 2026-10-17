@@ -9,7 +9,7 @@ export async function GET() {
   await ready;
   const cid = contractId();
   const disputes = await sql`
-    SELECT e.order_id, e.actor, e.note, e.created_at, m.title
+    SELECT e.order_id, e.actor, e.note, e.photo_data_url, e.created_at, m.title
     FROM order_events e
     LEFT JOIN order_meta m ON m.contract_id = e.contract_id AND m.order_id = e.order_id
     WHERE e.contract_id = ${cid} AND e.kind = 'disputed'

@@ -100,6 +100,8 @@ export default function OrderPage({
   // Formulario de disputa
   const [showDisputeForm, setShowDisputeForm] = useState(false);
   const [disputeMotive, setDisputeMotive] = useState("");
+  const [disputePhotoDataUrl, setDisputePhotoDataUrl] = useState<string | null>(null);
+  const [uploadingDisputePhoto, setUploadingDisputePhoto] = useState(false);
 
   const fetchOrderData = useCallback(
     async (silent = false) => {
@@ -155,7 +157,8 @@ export default function OrderPage({
     label: string,
     kind: string,
     fn: () => Promise<{ hash: string }>,
-    note?: string
+    note?: string,
+    photoDataUrl?: string
   ) => {
     if (!address) {
       alert("Conectá tu billetera Freighter primero.");
@@ -165,7 +168,7 @@ export default function OrderPage({
       setActionLoading(true);
       const res = await fn();
       setLastTx({ label, hash: res.hash });
-      await saveEvent(orderId, { kind, txHash: res.hash, actor: address, note });
+      await saveEvent(orderId, { kind, txHash: res.hash, actor: address, note, photoDataUrl });
       await fetchOrderData(true);
       return true;
     } catch (err: any) {
@@ -188,6 +191,21 @@ export default function OrderPage({
       setPhotoDataUrl(await compressImage(file));
     } catch {
       alert("No se pudo leer la imagen.");
+    }
+  };
+
+  const handleDisputePhotoChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    try {
+      setUploadingDisputePhoto(true);
+      const compressed = await compressImage(file);
+      setDisputePhotoDataUrl(compressed);
+    } catch (err) {
+      console.error(err);
+      alert("No se pudo leer la imagen.");
+    } finally {
+      setUploadingDisputePhoto(false);
     }
   };
 
@@ -228,9 +246,13 @@ export default function OrderPage({
       "Disputa abierta",
       "disputed",
       () => openDispute({ orderId, callerAddress: address! }),
-      disputeMotive.trim()
+      disputeMotive.trim(),
+      disputePhotoDataUrl || undefined
     );
-    if (ok) setShowDisputeForm(false);
+    if (ok) {
+      setShowDisputeForm(false);
+      setDisputePhotoDataUrl(null);
+    }
   };
 
   const handleClaim = () =>
@@ -695,29 +717,68 @@ export default function OrderPage({
 
               {(isBuyer || isSeller) &&
                 (showDisputeForm ? (
-                  <form onSubmit={handleDispute} className="text-left space-y-2 max-w-md mx-auto">
-                    <label className="block text-xs text-slate-400 font-medium">
-                      Motivo de la disputa (lo verá el árbitro)
-                    </label>
-                    <textarea
-                      required
-                      value={disputeMotive}
-                      onChange={(e) => setDisputeMotive(e.target.value)}
-                      rows={3}
-                      placeholder="Ej. El paquete llegó vacío / el producto no es el de la publicación"
-                      className="w-full px-3 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white text-xs focus:outline-none focus:border-rose-500"
-                    />
+                  <form onSubmit={handleDispute} className="text-left space-y-3 max-w-md mx-auto">
+                    <div>
+                      <label className="block text-xs text-slate-400 font-medium mb-1">
+                        Motivo de la disputa (lo verá el árbitro) *
+                      </label>
+                      <textarea
+                        required
+                        value={disputeMotive}
+                        onChange={(e) => setDisputeMotive(e.target.value)}
+                        rows={3}
+                        placeholder="Ej. El paquete llegó vacío / el producto está roto o no coincide"
+                        className="w-full px-3 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white text-xs focus:outline-none focus:border-rose-500"
+                      />
+                    </div>
+
+                    <div className="p-3 rounded-xl bg-slate-950/80 border border-slate-800 space-y-2">
+                      <label className="block text-xs text-slate-400 font-medium">
+                        Foto de evidencia del reclamo (opcional):
+                      </label>
+                      <input
+                        type="file"
+                        accept="image/*"
+                        onChange={handleDisputePhotoChange}
+                        disabled={uploadingDisputePhoto || actionLoading}
+                        className="text-xs text-slate-400 file:mr-2 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-slate-800 file:text-slate-200 hover:file:bg-slate-700 cursor-pointer w-full"
+                      />
+                      {uploadingDisputePhoto && (
+                        <p className="text-[11px] text-amber-400 animate-pulse">Comprimiendo imagen...</p>
+                      )}
+                      {disputePhotoDataUrl && (
+                        <div className="relative inline-block mt-1">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={disputePhotoDataUrl}
+                            alt="Evidencia reclamo"
+                            className="w-24 h-24 object-cover rounded-lg border border-rose-500/40"
+                          />
+                          <button
+                            type="button"
+                            onClick={() => setDisputePhotoDataUrl(null)}
+                            className="absolute -top-1.5 -right-1.5 bg-rose-600 hover:bg-rose-500 text-white rounded-full w-5 h-5 text-xs flex items-center justify-center font-bold shadow"
+                          >
+                            ×
+                          </button>
+                        </div>
+                      )}
+                    </div>
+
                     <div className="flex gap-2">
                       <button
                         type="submit"
-                        disabled={actionLoading}
+                        disabled={actionLoading || uploadingDisputePhoto}
                         className="flex-1 py-2.5 rounded-xl bg-rose-500 hover:bg-rose-400 text-white font-bold text-xs disabled:opacity-50"
                       >
-                        Abrir disputa
+                        {actionLoading ? "Enviando..." : "Abrir disputa"}
                       </button>
                       <button
                         type="button"
-                        onClick={() => setShowDisputeForm(false)}
+                        onClick={() => {
+                          setShowDisputeForm(false);
+                          setDisputePhotoDataUrl(null);
+                        }}
                         className="px-4 py-2.5 rounded-xl bg-slate-800 text-slate-300 text-xs"
                       >
                         Cancelar
