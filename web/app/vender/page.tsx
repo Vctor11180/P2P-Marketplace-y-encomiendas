@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { useWallet } from "@/context/WalletContext";
 import { createOrder } from "@/lib/stellar";
+import { saveOrderMeta, saveEvent } from "@/lib/offchain";
 import {
   PackagePlus,
   ArrowRight,
@@ -71,9 +72,21 @@ export default function VenderPage() {
 
       setTxHash(res.hash);
 
-      // In Soroban events or returned value, we can extract or increment order ID
-      // For demo, we query the latest or fallback to 1
-      setCreatedOrderId(1);
+      // create_order devuelve el ID (u64) de la orden recién creada
+      const newId = Number(res.returnValue);
+      if (!Number.isInteger(newId) || newId <= 0) {
+        throw new Error(`La orden se creó (tx ${res.hash}) pero no se pudo leer su ID.`);
+      }
+
+      await saveOrderMeta(newId, {
+        title: title.trim(),
+        originCity,
+        destCity,
+        seller: address,
+      });
+      await saveEvent(newId, { kind: "created", txHash: res.hash, actor: address });
+
+      setCreatedOrderId(newId);
     } catch (err: any) {
       console.error(err);
       alert(`Error creando orden: ${err.message || err}`);

@@ -132,11 +132,11 @@ trato-seguro/
 ## 6. Alcance del MVP
 
 ### Dentro (obligatorio)
-- [ ] Contrato escrow con: crear orden, depositar, marcar enviado (con hash de evidencia), confirmar recepción, liberación automática por tiempo, abrir disputa, resolver disputa, consultar orden.
-- [ ] Tests unitarios del contrato (camino feliz + disputa + timeout).
-- [ ] Deploy en testnet y transacción demostrable.
-- [ ] Web con 3 pantallas: crear orden → página de la orden (pagar / marcar enviado / confirmar / disputar) → panel árbitro.
-- [ ] Conexión con Freighter en testnet.
+- [x] Contrato escrow con: crear orden, depositar, marcar enviado (con hash de evidencia), confirmar recepción, liberación automática por tiempo, abrir disputa, resolver disputa, consultar orden.
+- [x] Tests unitarios del contrato (camino feliz + disputa + timeout).
+- [x] Deploy en testnet y transacción demostrable (órdenes #1 feliz, #2 timeout, #3 disputa→reembolso).
+- [x] Web con 3 pantallas: crear orden → página de la orden (pagar / marcar enviado / confirmar / disputar) → panel árbitro.
+- [x] Conexión con Freighter en testnet. Metadatos, fotos e historial off-chain en Neon (Postgres), opcional vía `DATABASE_URL`.
 
 ### Fuera (solo mencionar en el pitch como visión)
 - Entrada/salida en bolivianos (QR bancario, anchors).

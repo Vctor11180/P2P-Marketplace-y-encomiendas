@@ -214,6 +214,18 @@ export async function invokeContractWithFreighter({
   // 1. Simular transacción
   const sim = await server.simulateTransaction(tx);
   if (rpc.Api.isSimulationError(sim)) {
+    console.error("Simulación fallida:", sim.error);
+    if (sim.error.includes("UnreachableCodeReached")) {
+      throw new Error(
+        "El contrato rechazó la operación: el estado de la orden cambió o el plazo todavía no venció. Actualizá la página."
+      );
+    }
+    if (sim.error.includes("Auth")) {
+      throw new Error("Esta wallet no tiene permiso para esta acción en la orden.");
+    }
+    if (sim.error.includes("balance") || sim.error.includes("insufficient")) {
+      throw new Error("Saldo insuficiente en la wallet (fondeala con Friendbot en testnet).");
+    }
     throw new Error(`Error en simulación: ${sim.error}`);
   }
 
@@ -242,13 +254,28 @@ export async function invokeContractWithFreighter({
   // 5. Esperar confirmación
   let statusRes = await server.getTransaction(sendRes.hash);
   let attempts = 0;
-  while (statusRes.status === "NOT_FOUND" && attempts < 15) {
+  while (statusRes.status === "NOT_FOUND" && attempts < 30) {
     await new Promise((r) => setTimeout(r, 1000));
     statusRes = await server.getTransaction(sendRes.hash);
     attempts++;
   }
 
-  return { hash: sendRes.hash, result: statusRes };
+  if (statusRes.status === "FAILED") {
+    throw new Error(`La transacción falló on-chain (${sendRes.hash})`);
+  }
+  if (statusRes.status !== "SUCCESS") {
+    throw new Error(`Tiempo de espera agotado confirmando ${sendRes.hash}`);
+  }
+
+  const returnValue = statusRes.returnValue
+    ? scValToNative(statusRes.returnValue)
+    : undefined;
+
+  return { hash: sendRes.hash, result: statusRes, returnValue };
+}
+
+export function explorerTxUrl(hash: string) {
+  return `https://stellar.expert/explorer/testnet/tx/${hash}`;
 }
 
 export async function createOrder({
@@ -365,9 +392,37 @@ export async function resolveDispute({
   });
 }
 
-export async function sha256Hex(text: string): Promise<string> {
-  const enc = new TextEncoder();
-  const hashBuf = await crypto.subtle.digest("SHA-256", enc.encode(text));
+export async function claimAfterTimeout({
+  orderId,
+  sellerAddress,
+}: {
+  orderId: number;
+  sellerAddress: string;
+}) {
+  return invokeContractWithFreighter({
+    functionName: "claim_after_timeout",
+    userAddress: sellerAddress,
+    args: [nativeToScVal(BigInt(orderId), { type: "u64" })],
+  });
+}
+
+export async function refundIfNotShipped({
+  orderId,
+  buyerAddress,
+}: {
+  orderId: number;
+  buyerAddress: string;
+}) {
+  return invokeContractWithFreighter({
+    functionName: "refund_if_not_shipped",
+    userAddress: buyerAddress,
+    args: [nativeToScVal(BigInt(orderId), { type: "u64" })],
+  });
+}
+
+export async function sha256Hex(input: string | Uint8Array): Promise<string> {
+  const data = typeof input === "string" ? new TextEncoder().encode(input) : input;
+  const hashBuf = await crypto.subtle.digest("SHA-256", data as BufferSource);
   const hashArr = Array.from(new Uint8Array(hashBuf));
   return hashArr.map((b) => b.toString(16).padStart(2, "0")).join("");
 }
