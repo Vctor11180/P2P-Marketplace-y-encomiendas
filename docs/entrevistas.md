@@ -11,7 +11,7 @@
 | # | Perfil | Ciudad | ¿Estafado o casi? | Monto perdido (Bs) | ¿Dejó de comprar/vender por desconfianza? | ¿Usaría escrow? | ¿Pagaría 1–2%? ¿Quién? | ¿Usa USDT/USDC? |
 |---|---|---|---|---|---|---|---|---|
 | 1 | Belén Mejía (Consumidora) | La Paz (Ideatón) | No | 0 | Compra con desconfianza (solo 50% adelantado) | Sí (pago contraentrega) | Sí (el vendedor) | No / Abierta a aprender |
-| 2 | | | | | | | | |
+| 2 | Alejandro Bolívar (Comprador Tech) | La Paz (Ideatón) | Casi (temor al fraude) | 0 | Sí (limita compras a 1 cada 6 meses por miedo a estafa) | Sí (exige KYC y protección) | Sí (modelo compartido 50/50) | No especifica |
 | 3 | | | | | | | | |
 | 4 | | | | | | | | |
 | 5 | | | | | | | | |
@@ -32,9 +32,20 @@
 
 ---
 
-## Entrevista 2
+## Entrevista 2: Alejandro Bolívar
+*Transcripción completa disponible en: [entrevista-2-alejandro-bolivar.md](file:///c:/Users/usuario/Desktop/descargas/Hackatones/Stellar%20Hackaton/P2P-Marketplace-y-encomiendas/docs/entrevistas/entrevista-2-alejandro-bolivar.md)*
 
-(copiar la estructura de la entrevista 1)
+- **Nombre:** Alejandro Bolívar
+- **Perfil:** Comprador de equipos tecnológicos / Usuario cauto
+- **Formato:** Presencial (Ideatón Stellar 2026) · Entrevistador: Ronald Augusto
+- **Problema clave:** Frena sus compras de tecnología a 1 vez cada 6 meses únicamente por temor a ser estafado.
+- **Mecanismo sugerido:** KYC / Carnet + Foto.
+- **Modelo de comisión:** Sugiere **50% comprador y 50% vendedor** para balancear los incentivos de ambas partes.
+- **Cita textual clave:**
+> *"La verdad que no compro mucho porque me causa un poco de inseguridad porque te pueden estafar; una vez cada seis meses para probar."*
+> *"Considero que podría ser mitad y mitad: para que se lo lleve solo el vendedor es mucha carga, y solo el comprador tampoco va a comprar. Mitad y mitad."*
+
+---
 
 ## Entrevista 3
 
