@@ -1,5 +1,8 @@
 # Entrevistas de validación — Chaski
 
+> 📁 **Carpeta Oficial de Evidencias en la Nube (Google Drive):**  
+> [Acceder a las grabaciones y audios de las entrevistas](https://drive.google.com/drive/folders/1qLMssL-501MLKVg4dMtOnxekt-u1ckk5?usp=sharing)
+
 **Hipótesis:** al menos 3 de 5 personas que compran o venden por redes han sido estafadas o han dejado de concretar una compra por desconfianza.
 
 **Resultado:** **6 de 6 (100%) confirman la hipótesis.** Se validó tanto la desconfianza crónica y cancelación de tratos como un caso de **estafa real consumada** (pago de 50% de anticipo con bloqueo inmediato en redes).
