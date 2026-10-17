@@ -1,0 +1,35 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Testing
+coverage
+
+# Next.js
+.next/
+out/
+build/
+dist/
+
+# Rust
+target/
+**/*.rs.bk
+
+# Env and keys
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
+*.key
+
+# Stellar
+.soroban/
+.stellar/
+
+# OS
+.DS_Store
+*.pem
+thumbs.db
