@@ -36,7 +36,7 @@
 ---
 
 ## Entrevista 1: Belén Mejía Medina
-*Transcripción completa disponible en: [entrevista-1-belen-mejia.md](file:///c:/Users/usuario/Desktop/descargas/Hackatones/Stellar%20Hackaton/P2P-Marketplace-y-encomiendas/docs/entrevistas/entrevista-1-belen-mejia.md)*
+*Transcripción completa disponible en: [entrevista-1-belen-mejia.md](entrevistas/entrevista-1-belen-mejia.md)*
 
 - **Nombre:** Belén Mejía Medina
 - **Perfil:** Participante Ideatón / Consumidora potencial
@@ -50,7 +50,7 @@
 ---
 
 ## Entrevista 2: Alejandro Bolívar
-*Transcripción completa disponible en: [entrevista-2-alejandro-bolivar.md](file:///c:/Users/usuario/Desktop/descargas/Hackatones/Stellar%20Hackaton/P2P-Marketplace-y-encomiendas/docs/entrevistas/entrevista-2-alejandro-bolivar.md)*
+*Transcripción completa disponible en: [entrevista-2-alejandro-bolivar.md](entrevistas/entrevista-2-alejandro-bolivar.md)*
 
 - **Nombre:** Alejandro Bolívar
 - **Perfil:** Comprador de equipos tecnológicos / Usuario cauto
@@ -65,7 +65,7 @@
 ---
 
 ## Entrevista 3: Daniel Cueto
-*Transcripción completa disponible en: [entrevista-3-daniel-cueto.md](file:///c:/Users/usuario/Desktop/descargas/Hackatones/Stellar%20Hackaton/P2P-Marketplace-y-encomiendas/docs/entrevistas/entrevista-3-daniel-cueto.md)*
+*Transcripción completa disponible en: [entrevista-3-daniel-cueto.md](entrevistas/entrevista-3-daniel-cueto.md)*
 
 - **Nombre:** Daniel Cueto
 - **Perfil:** Comprador frecuente / Vendedor ocasional
@@ -79,7 +79,7 @@
 ---
 
 ## Entrevista 4: Julieta Stein Ortiz
-*Transcripción completa disponible en: [entrevista-4-julieta-stein.md](file:///c:/Users/usuario/Desktop/descargas/Hackatones/Stellar%20Hackaton/P2P-Marketplace-y-encomiendas/docs/entrevistas/entrevista-4-julieta-stein.md)*
+*Transcripción completa disponible en: [entrevista-4-julieta-stein.md](entrevistas/entrevista-4-julieta-stein.md)*
 
 - **Nombre:** Julieta Stein Ortiz
 - **Perfil:** Público general / Novata en Web3
@@ -93,7 +93,7 @@
 ---
 
 ## Entrevista 5: Kevin Guzmán
-*Transcripción completa disponible en: [entrevista-5-kevin-guzman.md](file:///c:/Users/usuario/Desktop/descargas/Hackatones/Stellar%20Hackaton/P2P-Marketplace-y-encomiendas/docs/entrevistas/entrevista-5-kevin-guzman.md)*
+*Transcripción completa disponible en: [entrevista-5-kevin-guzman.md](entrevistas/entrevista-5-kevin-guzman.md)*
 
 - **Nombre:** Kevin Guzmán
 - **Perfil:** Comprador recurrente en Facebook Marketplace (ropa, regalos)
@@ -107,7 +107,7 @@
 ---
 
 ## Entrevista 6: Luna Gallego
-*Transcripción completa disponible en: [entrevista-6-luna-gallego.md](file:///c:/Users/usuario/Desktop/descargas/Hackatones/Stellar%20Hackaton/P2P-Marketplace-y-encomiendas/docs/entrevistas/entrevista-6-luna-gallego.md)*
+*Transcripción completa disponible en: [entrevista-6-luna-gallego.md](entrevistas/entrevista-6-luna-gallego.md)*
 
 - **Nombre:** Luna Gallego
 - **Perfil:** Compradora de alta frecuencia en Facebook (1 vez por semana: ropa, hogar)
