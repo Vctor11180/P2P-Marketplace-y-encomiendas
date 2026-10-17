@@ -11,7 +11,8 @@
 **Subtítulo:** Escrow descentralizado en Soroban para envíos y encomiendas en Bolivia.  
 **Gancho:**
 > *"Comprar o vender a alguien de otra ciudad en Bolivia hoy es un acto de fe ciega."*
-- Comprador: *"Tengo miedo de transferir y que me bloqueen en WhatsApp sin enviar nada."*
+- **Historia real (Luna Gallego):** *"Quería comprar artículos para mi casa por Facebook... me pidieron el 50% de anticipo, transferí y me bloquearon al instante."*
+- Comprador: *"Tengo miedo de transferir y que me bloqueen sin enviar nada."*
 - Vendedor: *"No puedo despachar por encomienda si no veo el dinero primero."*
 - **Consecuencia:** Millones de bolivianos en ventas que nunca se concretan por pura desconfianza.
 
@@ -19,14 +20,17 @@
 
 ## Slide 2: Validación con Usuarios Reales
 **Título:** Hablamos con compradores y vendedores en Bolivia (Ideatón Stellar 2026)
-**Hallazgos clave (5 entrevistas estructuradas):**
-- **5 de 5 (100%)** reportan temor constante, compras frenadas o cancelaciones directas por desconfianza en transferencias bancarias a desconocidos.
+**Hallazgos clave (6 entrevistas estructuradas):**
+- **1 caso de estafa real documentado:** Luna Gallego (compradora semanal) estafada con el 50% de anticipo.
+- **6 de 6 (100%)** reportan temor constante, compras frenadas o cancelaciones directas por desconfianza en transferencias bancarias a desconocidos.
 - **100% de aceptación del Escrow:** Todos los entrevistados usarían un sistema que congele el dinero de forma neutral hasta que el paquete llegue a destino.
-- **100% dispuestos a pagar comisión (1%–2%):** Consideran que pagar 1.5% de seguridad es insignificante frente a la tranquilidad de no ser estafado.
+- **100% dispuestos a pagar comisión (1%–2%):** Pagar 1.5% de seguridad es insignificante frente a perder el 50% o 100% en una estafa.
 - **80% sostiene que el Vendedor debe asumir el fee:** El vendedor financia la garantía como su principal ventaja competitiva para cerrar ventas. (20% propone división 50/50).
-- **Cita destacada:**
-> *"El vendedor debería pagar una comisión diciendo: «Mira, esto es real, quiero que concretemos esta venta, entonces voy a pagar algo para que confíes en mí»."* — Julieta Stein Ortiz
+- **Citas destacadas:**
+> *"Una vez estaba comprando algo para mi casa, les pagué la mitad por adelantado... y me bloquearon."* — Luna Gallego  
+> *"El vendedor debería pagar una comisión diciendo: «Mira, esto es real, quiero que concretemos esta venta, entonces voy a pagar algo para que confíes en mí»."* — Julieta Stein Ortiz  
 > *"En Facebook no hay nada que te certifique que la persona es real. Da mucha desconfianza hacer una transferencia."* — Kevin Guzmán
+
 
 
 ---

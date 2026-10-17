@@ -7,16 +7,16 @@
 ---
 
 ## Minuto 0:00 – 0:30 | El Problema y la Historia Real
-- **Visual:** Pantalla dividida con capturas reales de Facebook Marketplace Bolivia, grupos de compra/venta y chats de WhatsApp con mensajes como *"¿Me envías la encomienda primero o te transfiero antes?"* / *"No te puedo enviar sin comprobante"*.
+- **Visual:** Pantalla con la cita de Luna Gallego en grande y capturas de chats de Marketplace con el clásico *"te pago la mitad y la otra mitad al enviar"*.
 - **Voz en off / Presentador:**
-  > *"En Bolivia, comprarle a alguien de otra ciudad por Marketplace o redes sociales es casi una ruleta rusa. Si pagas por adelantado, corres el riesgo de que nunca despachen tu encomienda y te bloqueen. Y si vendes y mandas el paquete primero, te arriesgas a que jamás te transfieran. Esta desconfianza paraliza miles de ventas cada día entre La Paz, Santa Cruz, Cochabamba y el resto del país."*
+  > *"«Estaba comprando algo para mi casa por Facebook... me dijeron que les pagara la mitad de anticipo, les transferí y me bloquearon al instante». Esta historia no es inventada; nos la contó Luna Gallego, una compradora habitual en la Ideatón Stellar 2026. En Bolivia, comprarle a alguien de otra ciudad por redes sociales es un acto de fe ciega. Si pagas por adelantado te arriesgas a que te bloqueen, y si eres vendedor y envías primero, te arriesgas a que nunca te paguen. Esta desconfianza paraliza millones de bolivianos en ventas cada mes."*
 
 ---
 
 ## Minuto 0:30 – 1:00 | La Validación en el Terreno
-- **Visual:** Gráfico con datos de las 5 entrevistas realizadas en la Ideatón Stellar 2026 (`docs/entrevistas.md`) y la cita textual de Julieta Stein destacada en pantalla.
+- **Visual:** Gráfico con datos de las 6 entrevistas estructuradas en la Ideatón Stellar 2026 (`docs/entrevistas.md`) y citas de los participantes en pantalla.
 - **Voz en off:**
-  > *"Salimos a entrevistar a personas reales en la Ideatón Stellar 2026. El 100% de los encuestados nos confirmó que el miedo a las transferencias bancarias a desconocidos frena sus compras, les hace cancelar tratos o los obliga a métodos informales. Pero el dato más contundente fue este: el 100% validó que usaría un sistema donde el dinero quede congelado de forma neutral hasta que el paquete llegue a sus manos, y el 80% sostiene que el propio vendedor debe pagar la comisión para certificar que su negocio es legítimo. Como nos dijo una de las participantes: «El vendedor debería pagar para decir: esto es real, concretemos la venta y confía en mí». Para resolver esto creamos Chaski."*
+  > *"Salimos a entrevistar a personas reales en la Ideatón. Los números fueron contundentes: el 100% de los entrevistados frena sus compras, cancela tratos o vive con miedo constante al transferir a desconocidos. Pero el dato más potente fue la solución: el 100% confirmó que usaría un sistema donde el dinero quede congelado de forma neutral hasta que el paquete llegue a sus manos, y el 80% afirmó que el vendedor con gusto pagaría una pequeña comisión del 1% para certificar que su negocio es legítimo y seguro. Para resolver esto creamos Chaski."*
 
 ---
 

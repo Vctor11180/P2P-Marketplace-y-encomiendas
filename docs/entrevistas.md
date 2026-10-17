@@ -2,7 +2,7 @@
 
 **Hipótesis:** al menos 3 de 5 personas que compran o venden por redes han sido estafadas o han dejado de concretar una compra por desconfianza.
 
-**Resultado:** **5 de 5 (100%) confirman la hipótesis.** Todos los participantes reportan desconfianza crónica en compras a distancia por redes sociales, recurriendo a pagos fraccionados forzados, limitando drásticamente su frecuencia de compra o cancelando tratos atractivos ante cualquier señal extraña.
+**Resultado:** **6 de 6 (100%) confirman la hipótesis.** Se validó tanto la desconfianza crónica y cancelación de tratos como un caso de **estafa real consumada** (pago de 50% de anticipo con bloqueo inmediato en redes).
 
 ---
 
@@ -15,18 +15,20 @@
 | 3 | Daniel Cueto (Comprador/Vendedor P2P) | La Paz (Ideatón) | Casi (hostigamiento) | 0 | Sí (canceló compras convenientes por comportamiento extraño) | Sí (garantía de entrega) | Sí (el vendedor como valor agregado) | No especifica |
 | 4 | Julieta Stein Ortiz (Novata Web3) | La Paz (Ideatón) | No | 0 | No compra a distancia por desconfianza | Sí (garantía anti-estafa) | Sí (el vendedor como señal de legitimidad) | No conoce / Rechazo a la complejidad |
 | 5 | Kevin Guzmán (Comprador Activo) | La Paz (Ideatón) | Casi (miedo al transferir) | 0 | Miedo constante / Desconfía de perfiles en Facebook | Sí (comprar sin preocuparse) | Sí (el vendedor para certificar seguridad) | No especifica |
+| 6 | Luna Gallego (Compradora Semanal) | La Paz (Ideatón) | **SÍ (Estafada)** | 50% del valor | Sí (bloqueada tras pagar anticipo) | Sí (valora trazabilidad on-chain) | Sí (seguridad de registros) | **Sí** (usa USDT/USDC por transparencia) |
 
 **Números clave consolidados:**
-- **5 de 5 (100%)** experimentan desconfianza o miedo al transferir por Marketplace/WhatsApp.
-- **5 de 5 (100%)** usarían un protocolo que congele el dinero de forma neutral hasta la entrega.
-- **5 de 5 (100%)** están de acuerdo en pagar una comisión del 1%–2% por protección.
-- **4 de 5 (80%)** sostienen que el **vendedor debe asumir el costo**, ya que dar seguridad es su mayor palanca comercial (el 20% restante propone modelo 50/50).
-- **100%** de los participantes ajenos a Web3 señalan que la tecnología actual es abrumadora y que la solución debe sentirse como una app normal.
+- **1 de cada 6** entrevistados sufrió una **estafa real directa** por pago anticipado del 50% con bloqueo inmediato.
+- **6 de 6 (100%)** experimentan desconfianza o miedo al transferir a desconocidos en Facebook/WhatsApp.
+- **6 de 6 (100%)** usarían un protocolo que congele el dinero de forma neutral hasta la entrega física de la encomienda.
+- **100% de disposición de pago:** Aceptan pagar 1%–2% de comisión a cambio de eliminar el riesgo de fraude.
+- **Consenso sobre el vendedor (80%):** Sostienen que el vendedor debe asumir el fee como señal de legitimidad y garantía de entrega.
+- **Validación de Stablecoins (USDC/Stellar):** Quienes conocen USDT/USDC destacan que la trazabilidad y registro inmutable en blockchain da mucha más seguridad que transferencias bancarias privadas.
 
-**Mejores citas para abrir el pitch:**
+**Cita de apertura para el Pitch y Video:**
+> *"Una vez estaba comprando algo para mi casa, me dijeron que les pagara la mitad por adelantado... les pagué la mitad y me bloquearon."* — Luna Gallego  
 > *"El vendedor debería pagar una comisión diciendo: «Mira, esto es real, quiero que concretemos esta venta, entonces voy a pagar algo para que confíes en mí»."* — Julieta Stein  
-> *"En Facebook no hay nada que te certifique que la persona es real. Da mucha desconfianza el hecho de hacer una transferencia."* — Kevin Guzmán  
-> *"Claro que cancelé compras: la persona empieza a tener un comportamiento extraño y hostigarte para que pagues antes, y uno lo cancela."* — Daniel Cueto
+> *"En Facebook no hay nada que te certifique que la persona o su cuenta es real. Da mucha desconfianza hacer una transferencia."* — Kevin Guzmán
 
 ---
 
@@ -98,3 +100,17 @@
 - **Cita textual clave:**
 > *"En Facebook no hay nada que te certifique que la persona o su cuenta es real. Da mucha desconfianza el hecho de hacer una transferencia."*
 > *"El vendedor tiene que certificarme que no es una estafa. Lo ideal es que el comprador compre sin preocuparse; de la seguridad se encarga el vendedor."*
+
+---
+
+## Entrevista 6: Luna Gallego
+*Transcripción completa disponible en: [entrevista-6-luna-gallego.md](file:///c:/Users/usuario/Desktop/descargas/Hackatones/Stellar%20Hackaton/P2P-Marketplace-y-encomiendas/docs/entrevistas/entrevista-6-luna-gallego.md)*
+
+- **Nombre:** Luna Gallego
+- **Perfil:** Compradora de alta frecuencia en Facebook (1 vez por semana: ropa, hogar)
+- **Formato:** Presencial (Ideatón Stellar 2026) · Entrevistador: Ronald Augusto
+- **Problema clave:** **Víctima de estafa real.** Pagó el 50% de anticipo por artículos del hogar y fue bloqueada de inmediato en redes.
+- **Validación de Blockchain y Monedas Estables:** Conoce y utiliza USDT/USDC; destaca que la inmutabilidad y transparencia de los registros on-chain brinda una seguridad imposible de replicar en transferencias bancarias privadas.
+- **Cita textual clave:**
+> *"Una vez estaba comprando algo para mi casa, me dijeron que les pagara la mitad por adelantado... les pagué la mitad y me bloquearon."*
+> *"Siento que [USDT/USDC en blockchain] puede ser mucho más seguro por el tema de registros; sí se lleva un mejor registro."*
