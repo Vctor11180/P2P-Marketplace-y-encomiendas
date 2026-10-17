@@ -13,7 +13,7 @@
 | 1 | Belén Mejía (Consumidora) | La Paz (Ideatón) | No | 0 | Compra con desconfianza (solo 50% adelantado) | Sí (pago contraentrega) | Sí (el vendedor) | No / Abierta a aprender |
 | 2 | Alejandro Bolívar (Comprador Tech) | La Paz (Ideatón) | Casi (temor al fraude) | 0 | Sí (limita compras a 1 cada 6 meses por miedo a estafa) | Sí (exige KYC y protección) | Sí (modelo compartido 50/50) | No especifica |
 | 3 | Daniel Cueto (Comprador/Vendedor P2P) | La Paz (Ideatón) | Casi (hostigamiento) | 0 | Sí (canceló compras convenientes por comportamiento extraño) | Sí (garantía de entrega) | Sí (el vendedor como valor agregado) | No especifica |
-| 4 | | | | | | | | |
+| 4 | Julieta Stein Ortiz (Novata Web3) | La Paz (Ideatón) | No | 0 | No compra a distancia por desconfianza | Sí (garantía anti-estafa) | Sí (el vendedor como señal de legitimidad) | No conoce / Rechazo a la complejidad |
 | 5 | | | | | | | | |
 
 ---
@@ -61,8 +61,18 @@
 
 ---
 
-## Entrevista 4
+## Entrevista 4: Julieta Stein Ortiz
+*Transcripción completa disponible en: [entrevista-4-julieta-stein.md](file:///c:/Users/usuario/Desktop/descargas/Hackatones/Stellar%20Hackaton/P2P-Marketplace-y-encomiendas/docs/entrevistas/entrevista-4-julieta-stein.md)*
 
-## Entrevista 4
+- **Nombre:** Julieta Stein Ortiz
+- **Perfil:** Público general / Novata en Web3
+- **Formato:** Presencial (Ideatón Stellar 2026) · Entrevistador: Ronald Augusto
+- **Problema clave:** Curva de aprendizaje empinada y estrés frente a la terminología cripto ("voy 3 horas... me estresé y todavía no aprendí nada").
+- **Modelo de comisión:** El vendedor debe pagar la comisión como señal explícita de confianza y legitimidad.
+- **Cita textual clave:**
+> *"El vendedor debería pagar una comisión diciendo: «Mira, esto es real, quiero que concretemos esta venta, entonces voy a pagar algo para que confíes en mí»."*
+> *"Hasta ahorita voy 3 horas... me estresé y todavía no aprendí nada [sobre blockchain]."*
+
+---
 
 ## Entrevista 5
