@@ -10,44 +10,25 @@
 
 | # | Perfil | Ciudad | ¿Estafado o casi? | Monto perdido (Bs) | ¿Dejó de comprar/vender por desconfianza? | ¿Usaría escrow? | ¿Pagaría 1–2%? ¿Quién? | ¿Usa USDT/USDC? |
 |---|---|---|---|---|---|---|---|---|
-| 1 | | | | | | | | |
+| 1 | Belén Mejía (Consumidora) | La Paz (Ideatón) | No | 0 | Compra con desconfianza (solo 50% adelantado) | Sí (pago contraentrega) | Sí (el vendedor) | No / Abierta a aprender |
 | 2 | | | | | | | | |
 | 3 | | | | | | | | |
 | 4 | | | | | | | | |
 | 5 | | | | | | | | |
 
-**Números clave:**
-- _X/5_ fueron estafados o casi estafados.
-- Pérdida promedio: _Bs X_.
-- _X/5_ dejaron de concretar una venta/compra por desconfianza.
-- _X/5_ usarían el dinero "congelado" hasta que llegue el paquete.
-- _X/5_ pagarían 1–2%.
-
-**Mejor cita para abrir el pitch:**
-> "…"
-
 ---
 
-## Entrevista 1
+## Entrevista 1: Belén Mejía Medina
+*Transcripción completa disponible en: [entrevista-1-belen-mejia.md](file:///c:/Users/usuario/Desktop/descargas/Hackatones/Stellar%20Hackaton/P2P-Marketplace-y-encomiendas/docs/entrevistas/entrevista-1-belen-mejia.md)*
 
-- **Nombre / alias:** (con permiso; si no, "Vendedora de ropa, 28 años")
-- **Perfil:** compra / vende / ambos — qué productos — por qué red (Marketplace, TikTok, WhatsApp)
-- **Ciudad:** … ↔ ciudades con las que comercia: …
-- **Formato:** presencial / videollamada / llamada · duración · grabada sí/no (consentimiento: sí/no)
-- **Fecha y hora:**
-
-**Respuestas clave**
-1. Frecuencia de compras/ventas a otra ciudad:
-2. Cómo paga y envía hoy:
-3. Estafa o casi estafa (qué pasó, cuánto perdió):
-4. ¿Dejó de comprar/vender por desconfianza?:
-5. Cómo se protege hoy:
-6. ¿Usaría dinero "congelado" hasta recibir?:
-7. ¿Pagaría 1–2%? ¿Quién debería pagar?:
-8. ¿Tiene o usaría dólares digitales (USDT/USDC)?:
-
-**Cita textual:**
-> "…"
+- **Nombre:** Belén Mejía Medina
+- **Perfil:** Participante Ideatón / Consumidora potencial
+- **Formato:** Presencial (Ideatón Stellar 2026) · Entrevistador: Ronald Augusto
+- **Mecanismo actual:** Pagaría el 50% adelantado y el restante al recibir y comprobar el producto.
+- **Modelo de comisión:** Acepta el 1%, pero argumenta que debe pagarlo el **vendedor** como costo de garantía y seguridad hacia el cliente.
+- **Cita textual clave:**
+> *"Por seguridad siempre pago la mitad o pagaría la mitad, y ya cuando me llegue y esté todo bien, el resto del dinero."*
+> *"Pienso que el vendedor [debería pagar la comisión], porque se supone que es el que se debería encargar de darle la seguridad al cliente de que todo va a salir bien."*
 
 ---
 
