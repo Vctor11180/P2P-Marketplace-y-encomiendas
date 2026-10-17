@@ -18,14 +18,16 @@
 ---
 
 ## Slide 2: Validación con Usuarios Reales
-**Título:** Hablamos con compradores y vendedores en Bolivia
-**Hallazgos clave (Entrevistas de campo):**
-- **[X/5]** personas sufrieron estafas directas o intentos en Marketplace/WhatsApp.
-- **Pérdida promedio reportada:** [Bs X / $X USD] en paquetes nunca enviados o comprobantes falsos.
-- **[X/5]** dejaron de concretar ventas o compras interdepartamentales por desconfianza.
-- **100%** de los encuestados validó que usaría un sistema que "congele" el dinero de forma neutral hasta que el paquete llegue a destino.
+**Título:** Hablamos con compradores y vendedores en Bolivia (Ideatón Stellar 2026)
+**Hallazgos clave (5 entrevistas estructuradas):**
+- **5 de 5 (100%)** reportan temor constante, compras frenadas o cancelaciones directas por desconfianza en transferencias bancarias a desconocidos.
+- **100% de aceptación del Escrow:** Todos los entrevistados usarían un sistema que congele el dinero de forma neutral hasta que el paquete llegue a destino.
+- **100% dispuestos a pagar comisión (1%–2%):** Consideran que pagar 1.5% de seguridad es insignificante frente a la tranquilidad de no ser estafado.
+- **80% sostiene que el Vendedor debe asumir el fee:** El vendedor financia la garantía como su principal ventaja competitiva para cerrar ventas. (20% propone división 50/50).
 - **Cita destacada:**
-> *"[Insertar cita más potente de docs/entrevistas.md, ej: 'Le transferí 450 Bs para una encomienda a Oruro y a los 5 minutos me tenía bloqueado de todos lados...']"*
+> *"El vendedor debería pagar una comisión diciendo: «Mira, esto es real, quiero que concretemos esta venta, entonces voy a pagar algo para que confíes en mí»."* — Julieta Stein Ortiz
+> *"En Facebook no hay nada que te certifique que la persona es real. Da mucha desconfianza hacer una transferencia."* — Kevin Guzmán
+
 
 ---
 

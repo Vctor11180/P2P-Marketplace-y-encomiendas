@@ -14,9 +14,9 @@
 ---
 
 ## Minuto 0:30 – 1:00 | La Validación en el Terreno
-- **Visual:** Gráfico con datos de las entrevistas realizadas (`docs/entrevistas.md`) y cita textual en grande en pantalla.
+- **Visual:** Gráfico con datos de las 5 entrevistas realizadas en la Ideatón Stellar 2026 (`docs/entrevistas.md`) y la cita textual de Julieta Stein destacada en pantalla.
 - **Voz en off:**
-  > *"Salimos a entrevistar a compradores y comerciantes reales. [X de cada 5] nos confirmaron haber sido víctimas de estafas o haber cancelado una compra por desconfianza, con pérdidas de hasta [X] bolivianos. Pero el dato más contundente fue este: el 100% nos dijo que pagaría una comisión mínima si existiera una forma segura donde el dinero quede congelado de forma neutral hasta que la encomienda llegue a sus manos. Para resolver esto creamos Chaski."*
+  > *"Salimos a entrevistar a personas reales en la Ideatón Stellar 2026. El 100% de los encuestados nos confirmó que el miedo a las transferencias bancarias a desconocidos frena sus compras, les hace cancelar tratos o los obliga a métodos informales. Pero el dato más contundente fue este: el 100% validó que usaría un sistema donde el dinero quede congelado de forma neutral hasta que el paquete llegue a sus manos, y el 80% sostiene que el propio vendedor debe pagar la comisión para certificar que su negocio es legítimo. Como nos dijo una de las participantes: «El vendedor debería pagar para decir: esto es real, concretemos la venta y confía en mí». Para resolver esto creamos Chaski."*
 
 ---
 

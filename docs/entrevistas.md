@@ -2,11 +2,11 @@
 
 **Hipótesis:** al menos 3 de 5 personas que compran o venden por redes han sido estafadas o han dejado de concretar una compra por desconfianza.
 
-**Resultado:** _X de 5 confirman la hipótesis_ (completar al final)
+**Resultado:** **5 de 5 (100%) confirman la hipótesis.** Todos los participantes reportan desconfianza crónica en compras a distancia por redes sociales, recurriendo a pagos fraccionados forzados, limitando drásticamente su frecuencia de compra o cancelando tratos atractivos ante cualquier señal extraña.
 
 ---
 
-## Resumen para el deck (slide 2)
+## Resumen para el deck (Slide 2)
 
 | # | Perfil | Ciudad | ¿Estafado o casi? | Monto perdido (Bs) | ¿Dejó de comprar/vender por desconfianza? | ¿Usaría escrow? | ¿Pagaría 1–2%? ¿Quién? | ¿Usa USDT/USDC? |
 |---|---|---|---|---|---|---|---|---|
@@ -14,7 +14,19 @@
 | 2 | Alejandro Bolívar (Comprador Tech) | La Paz (Ideatón) | Casi (temor al fraude) | 0 | Sí (limita compras a 1 cada 6 meses por miedo a estafa) | Sí (exige KYC y protección) | Sí (modelo compartido 50/50) | No especifica |
 | 3 | Daniel Cueto (Comprador/Vendedor P2P) | La Paz (Ideatón) | Casi (hostigamiento) | 0 | Sí (canceló compras convenientes por comportamiento extraño) | Sí (garantía de entrega) | Sí (el vendedor como valor agregado) | No especifica |
 | 4 | Julieta Stein Ortiz (Novata Web3) | La Paz (Ideatón) | No | 0 | No compra a distancia por desconfianza | Sí (garantía anti-estafa) | Sí (el vendedor como señal de legitimidad) | No conoce / Rechazo a la complejidad |
-| 5 | | | | | | | | |
+| 5 | Kevin Guzmán (Comprador Activo) | La Paz (Ideatón) | Casi (miedo al transferir) | 0 | Miedo constante / Desconfía de perfiles en Facebook | Sí (comprar sin preocuparse) | Sí (el vendedor para certificar seguridad) | No especifica |
+
+**Números clave consolidados:**
+- **5 de 5 (100%)** experimentan desconfianza o miedo al transferir por Marketplace/WhatsApp.
+- **5 de 5 (100%)** usarían un protocolo que congele el dinero de forma neutral hasta la entrega.
+- **5 de 5 (100%)** están de acuerdo en pagar una comisión del 1%–2% por protección.
+- **4 de 5 (80%)** sostienen que el **vendedor debe asumir el costo**, ya que dar seguridad es su mayor palanca comercial (el 20% restante propone modelo 50/50).
+- **100%** de los participantes ajenos a Web3 señalan que la tecnología actual es abrumadora y que la solución debe sentirse como una app normal.
+
+**Mejores citas para abrir el pitch:**
+> *"El vendedor debería pagar una comisión diciendo: «Mira, esto es real, quiero que concretemos esta venta, entonces voy a pagar algo para que confíes en mí»."* — Julieta Stein  
+> *"En Facebook no hay nada que te certifique que la persona es real. Da mucha desconfianza el hecho de hacer una transferencia."* — Kevin Guzmán  
+> *"Claro que cancelé compras: la persona empieza a tener un comportamiento extraño y hostigarte para que pagues antes, y uno lo cancela."* — Daniel Cueto
 
 ---
 
@@ -75,4 +87,14 @@
 
 ---
 
-## Entrevista 5
+## Entrevista 5: Kevin Guzmán
+*Transcripción completa disponible en: [entrevista-5-kevin-guzman.md](file:///c:/Users/usuario/Desktop/descargas/Hackatones/Stellar%20Hackaton/P2P-Marketplace-y-encomiendas/docs/entrevistas/entrevista-5-kevin-guzman.md)*
+
+- **Nombre:** Kevin Guzmán
+- **Perfil:** Comprador recurrente en Facebook Marketplace (ropa, regalos)
+- **Formato:** Presencial (Ideatón Stellar 2026) · Entrevistador: Ronald Augusto
+- **Problema clave:** La falta de verificación de perfiles en Facebook le genera miedo constante al hacer transferencias bancarias directas.
+- **Modelo de comisión:** Considera que el vendedor debe absorber el 1% para certificar la legitimidad de su comercio y permitir que el comprador compre sin miedo.
+- **Cita textual clave:**
+> *"En Facebook no hay nada que te certifique que la persona o su cuenta es real. Da mucha desconfianza el hecho de hacer una transferencia."*
+> *"El vendedor tiene que certificarme que no es una estafa. Lo ideal es que el comprador compre sin preocuparse; de la seguridad se encarga el vendedor."*
