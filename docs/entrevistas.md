@@ -12,7 +12,7 @@
 |---|---|---|---|---|---|---|---|---|
 | 1 | Belén Mejía (Consumidora) | La Paz (Ideatón) | No | 0 | Compra con desconfianza (solo 50% adelantado) | Sí (pago contraentrega) | Sí (el vendedor) | No / Abierta a aprender |
 | 2 | Alejandro Bolívar (Comprador Tech) | La Paz (Ideatón) | Casi (temor al fraude) | 0 | Sí (limita compras a 1 cada 6 meses por miedo a estafa) | Sí (exige KYC y protección) | Sí (modelo compartido 50/50) | No especifica |
-| 3 | | | | | | | | |
+| 3 | Daniel Cueto (Comprador/Vendedor P2P) | La Paz (Ideatón) | Casi (hostigamiento) | 0 | Sí (canceló compras convenientes por comportamiento extraño) | Sí (garantía de entrega) | Sí (el vendedor como valor agregado) | No especifica |
 | 4 | | | | | | | | |
 | 5 | | | | | | | | |
 
@@ -47,7 +47,21 @@
 
 ---
 
-## Entrevista 3
+## Entrevista 3: Daniel Cueto
+*Transcripción completa disponible en: [entrevista-3-daniel-cueto.md](file:///c:/Users/usuario/Desktop/descargas/Hackatones/Stellar%20Hackaton/P2P-Marketplace-y-encomiendas/docs/entrevistas/entrevista-3-daniel-cueto.md)*
+
+- **Nombre:** Daniel Cueto
+- **Perfil:** Comprador frecuente / Vendedor ocasional
+- **Formato:** Presencial (Ideatón Stellar 2026) · Entrevistador: Ronald Augusto
+- **Problema clave:** Canceló compras atractivas directamente por actitudes sospechosas y presión de pago anticipado.
+- **Modelo de comisión:** Pagaría el 1% y sostiene que el vendedor debe asumirlo porque ofrecer confianza es su mayor ventaja competitiva.
+- **Cita textual clave:**
+> *"Claro, totalmente [he cancelado compras atractivas]. La persona empieza a tener un comportamiento extraño y hostigarte para que tú pagues, y uno lo cancela."*
+> *"El vendedor tiene que dar la garantía de que su producto te va a llegar. Si ofrece ese factor de confianza, para los clientes es un valor, entonces él tiene que pagarlo."*
+
+---
+
+## Entrevista 4
 
 ## Entrevista 4
 
