@@ -41,10 +41,10 @@ Para resolver los rieles bancarios en moneda local (Bs vía QR Simple) sin caer 
 
 - **¿Qué es Pollar?** Infraestructura de pagos y orquestación desarrollada en Bolivia sobre la red Stellar por Alejandro Alvarez. Conecta métodos de pago locales (QR boliviano, transferencias) directamente con balances y wallets en Stellar.
 - **Relación en el ecosistema:**
-  - **Pollar = Capa de Infraestructura / Anchor:** Se encarga de convertir Bolivianos (Bs) a USDC y viceversa vía QR bancario.
+  - **Pollar = Capa de onboarding / wallets:** su SDK público (`@pollar/core`, `@pollar/react`) ofrece wallets embebidas con login social, smart wallets y patrocinio de comisiones en Stellar. La conversión Bs ↔ USDC vía QR está **por confirmar** con el equipo de Pollar (su sitio solo menciona "Ramps" de forma genérica).
   - **Trato Seguro = Capa de Aplicación / Escrow:** Es el contrato inteligente en Soroban que bloquea y libera los fondos según eventos de envío y confirmación física.
 - **Estrategia para el Hackathon:**
-  - **En el Pitch / Deck (Slides 7 y 8):** Se presenta formalmente a Pollar como el partner de entrada/salida (on/off-ramp fiat), lo que elimina la objeción del jurado sobre cómo paga el usuario de feria sin saber de Web3.
+  - **En el Pitch / Deck (Slides 7 y 8):** Se presenta a Pollar como opción de onboarding (wallet embebida, sin Freighter) y la rampa Bs ↔ USDC como próximo paso con un partner local, lo que responde la objeción del jurado sobre cómo paga el usuario de feria sin saber de Web3.
   - **En el MVP (Entrega Domingo 12:00):** Se ejecuta el flujo nativo en Stellar testnet (con Freighter / token SAC) para asegurar el **+10% de bonus** por transacción real on-chain sin bloquear el MVP en dependencias externas o aprobaciones de pasarelas.
 
 ---

@@ -22,7 +22,7 @@ Todos los registros de audio/video de las entrevistas de campo, recursos multime
 En Bolivia, comprar o vender a alguien de otra ciudad por **Facebook Marketplace, WhatsApp o TikTok** es un acto de fe ciega:
 - **El comprador teme:** *"Si transfiero antes, me bloquean y nunca mandan el paquete por la flota."*
 - **El vendedor teme:** *"Si mando la encomienda primero, nunca me depositan."*
-- **Consecuencia:** Millones de bolivianos en ventas que nunca se concretan entre La Paz, Santa Cruz, Cochabamba y el resto del país por pura desconfianza.
+- **Consecuencia:** ventas que nunca se concretan entre La Paz, Santa Cruz, Cochabamba y el resto del país por pura desconfianza.
 
 **Chaski** resuelve esto sustituyendo la confianza ciega por un **contrato inteligente en Soroban**: el dinero del comprador queda congelado de forma neutral e inmutable hasta que la encomienda llega a destino y se confirma la recepción.
 
@@ -31,11 +31,14 @@ En Bolivia, comprar o vender a alguien de otra ciudad por **Facebook Marketplace
 ## 2. Validación con Usuarios Reales (6 Entrevistas de Campo)
 Durante la Ideatón Stellar 2026 salimos a entrevistar a personas reales (compradores, vendedores y público general) sobre sus experiencias de compra por internet. Los resultados fueron contundentes:
 
-- **100% (6/6)** confirman desconfianza crónica al transferir a desconocidos, compras canceladas o compras limitadas por miedo al fraude.
-- **1 caso de estafa real documentado:** Luna Gallego fue estafada pagando el 50% de anticipo para artículos del hogar con bloqueo inmediato en redes.
-- **100% de aceptación del Escrow:** Todos los entrevistados usarían un sistema neutral que congele los fondos hasta verificar el paquete.
-- **100% de disposición de pago:** Aceptan pagar una comisión del 1%–2% a cambio de garantía total.
-- **80% de consenso comercial:** Sostienen que el **vendedor debe asumir el fee**, ya que dar seguridad es su mayor palanca para cerrar ventas.
+- **6 de 6** sienten desconfianza al transferir a desconocidos por redes sociales.
+- **4 de 6** fueron estafados o dejaron de comprar por desconfianza (cancelaron tratos, limitan sus compras o no compran a distancia). **La hipótesis (≥3 de 5) se confirma.**
+- **1 caso de estafa real documentado:** Luna Gallego pagó el 50% de anticipo por artículos del hogar y la bloquearon de inmediato.
+- **6 de 6** usarían un sistema neutral que congele los fondos hasta verificar el paquete.
+- **6 de 6** aceptan una comisión del 1%–2% a cambio de esa garantía.
+- **4 de 6** sostienen que el **vendedor debe asumir el fee** como señal de legitimidad; 1 propone dividirlo 50/50.
+
+> Muestra pequeña (6 personas, La Paz, durante la Ideatón): valida el problema, no el tamaño de mercado. El próximo paso es un piloto con 20 vendedores reales.
 
 ### Matriz de Validación de Campo
 
@@ -52,7 +55,7 @@ Durante la Ideatón Stellar 2026 salimos a entrevistar a personas reales (compra
 
 ## 3. Smart Contracts & Despliegue en Stellar Testnet
 
-El núcleo de Chaski es un smart contract escrito en Rust para el entorno Soroban, auditado funcionalmente en Testnet:
+El núcleo de Chaski es un smart contract escrito en Rust para Soroban, con tests unitarios y probado de punta a punta en Testnet (no tiene auditoría de seguridad externa):
 
 - **Network:** Stellar Testnet (`https://soroban-testnet.stellar.org`)
 - **Contract ID:** [`CDXK2V4UCM7WQW74JVOIYLPZBYGQTWYWXNWF4PPJUDLJNTQ526JPML3X`](https://stellar.expert/explorer/testnet/contract/CDXK2V4UCM7WQW74JVOIYLPZBYGQTWYWXNWF4PPJUDLJNTQ526JPML3X)
@@ -61,8 +64,8 @@ El núcleo de Chaski es un smart contract escrito en Rust para el entorno Soroba
 
 ### Funciones Principales del Contrato (`contracts/escrow/src/lib.rs`):
 1. `create_order(...)` — Inicializa la orden con vendedor, monto, plazo de despacho y ventana de confirmación.
-2. `fund_order(...)` — El comprador deposita los fondos; el contrato asume la custodia neutral.
-3. `mark_shipped(...)` — El vendedor ancla la empresa de flota, guía y el hash SHA-256 de la foto del paquete.
+2. `fund(...)` — El comprador deposita los fondos; el contrato asume la custodia neutral.
+3. `mark_shipped(...)` — El vendedor ancla on-chain el hash SHA-256 de la evidencia (empresa de flota + guía + foto del paquete); los datos en sí quedan off-chain.
 4. `confirm_received(...)` — El comprador libera los fondos al vendedor y se suma reputación positiva.
 5. `claim_after_timeout(...)` — Si el comprador no responde en el plazo fijado, el vendedor cobra automáticamente.
 6. `refund_if_not_shipped(...)` — Si el vendedor no despacha a tiempo, el comprador recupera su dinero sin mediador.
@@ -70,13 +73,17 @@ El núcleo de Chaski es un smart contract escrito en Rust para el entorno Soroba
 8. `resolve_dispute(...)` — El árbitro evalúa la evidencia criptográfica y dictamina si reembolsa o libera.
 9. `get_order(...)` & `get_reputation(...)` — Lecturas públicas de órdenes y reputación inmutable.
 
-### Transacciones Verificadas en Vivo (Testnet Explorer):
-- **Liberación automática por timeout:** [Tx 30828bff...](https://stellar.expert/explorer/testnet/tx/30828bff6f7bfa265b31e5e41d0a4c8a305a62ab0771cb476827a8df39c02fe4) → Orden completada tras vencer el plazo sin respuesta del comprador.
-- **Disputa con reembolso por Árbitro:** [Tx 48bb19a1...](https://stellar.expert/explorer/testnet/tx/48bb19a163f494ca54bd00b6ea45995ae570fc20cd6305957484d19c7f56113f) → Comprador recuperó los fondos tras fallo del árbitro.
-- **Camino Feliz completo (Orden #4):**
-  - Creación de orden: [Tx 6dc1e7e0...](https://stellar.expert/explorer/testnet/tx/6dc1e7e04f67645069a5fa1c2feee8ffef86060c4bc17ce1ce446a8933192f34)
-  - Fondeo y bloqueo en Escrow: [Tx a94de9b0...](https://stellar.expert/explorer/testnet/tx/a94de9b09bfbc994270bc2326ef26e578c772cb80ea697fa29707e4d8b25d301)
-  - Envío y confirmación con reputación registrada.
+### Transacciones verificadas en Testnet
+
+Todas las rutas del contrato se ejecutaron en testnet desde tres clientes distintos: la **web con Freighter**, el **SDK desde Node** y el **CLI de Stellar**.
+
+| Orden | Camino | Cliente | Transacciones |
+|---|---|---|---|
+| #4 "Chompa de alpaca" | Camino feliz | Web + Freighter | [crear](https://stellar.expert/explorer/testnet/tx/6dc1e7e013461b7df9cf7fa0ad6a5f75f4162ae396d9cf8bcd6ddd8233192f34) → [pagar](https://stellar.expert/explorer/testnet/tx/a94de9b03562144d940867d299134041b65c2e157667ce67f23b4fa5de8b25d3) → [enviar](https://stellar.expert/explorer/testnet/tx/35e2bf679c44ded2bc4ccad6fb2a2f5aa81aeb1a4f7cc164dea354200f4fc7d2) → [confirmar](https://stellar.expert/explorer/testnet/tx/937b6423a6e4c82f6fe941dd9003e422134914a9a16f044f91846aabb2aad563) |
+| #5 "Zapatillas" | Disputa → árbitro | Web + Freighter | [crear](https://stellar.expert/explorer/testnet/tx/cefce6ace4ff47fd804b97d09c5d17da6d7a496ce1a91a743df83c1b21f6a875) → [pagar](https://stellar.expert/explorer/testnet/tx/1be6f7ba3ee0bc016e5d9bce52add9b7cd7e39b9cc47b1fed279eebac9bbdd99) → [enviar](https://stellar.expert/explorer/testnet/tx/ddaa3d12e09a008455fb3b8299e7244aca4335591336a3deff10db00f58f1f72) → [disputa](https://stellar.expert/explorer/testnet/tx/8b842a9843dd6e4930b02581c4ca849232a98da22a69f5b629f79fc29952bda2) → [veredicto](https://stellar.expert/explorer/testnet/tx/47776a4811d044bbb879b53290a3d22d886b28f28b3b4b0e81f673d3544715a9) |
+| #6 | Camino feliz | **@chaski/sdk** (Node, Keypair) | [crear](https://stellar.expert/explorer/testnet/tx/6e38816e056df7f40ede466d8c52faded2be88543b1c45531f1cdfccfa44cf70) → [pagar](https://stellar.expert/explorer/testnet/tx/d5810db0fadf6973621170e4bc31fdde2e6a5d1733e8e2ae1be04c751ff9f7d1) → [enviar](https://stellar.expert/explorer/testnet/tx/076bed2ba78ecbb40c8b221dc0d8f484e3842778290668c346844ad77494d392) → [confirmar](https://stellar.expert/explorer/testnet/tx/ffe1a80fae9a49b1eceb4f833667a113d9113fe52a65d02344109e445e34074b) |
+| #2 | Liberación automática por plazo | CLI | [cobro tras timeout](https://stellar.expert/explorer/testnet/tx/30828bff6f7bfa265b31e5e41d0a4c8a305a62ab0771cb476827a8df39c02fe4) (el intento antes del plazo fue rechazado por el contrato) |
+| #3 | Disputa → reembolso | CLI | [pagar](https://stellar.expert/explorer/testnet/tx/9891616342dd5e2b439f1c26c00f1ec34dda4c7be10e9db9cfd75717e0cfaee5) → [enviar](https://stellar.expert/explorer/testnet/tx/f2924783bec57c4f157e4b0d7df2cfadac7b7e86872a132b893e784d960b2e13) → [disputa](https://stellar.expert/explorer/testnet/tx/54dc7a8351e4771979db2ee7985c36258c38945e057c18c2e29959545d02a8d3) → [reembolso](https://stellar.expert/explorer/testnet/tx/48bb19a163f494ca54bd00b6ea45995ae570fc20cd6305957484d19c7f56113f) (un tercero que intentó resolver fue rechazado) |
 
 ---
 
@@ -108,17 +115,58 @@ Ese hash exacto se ancla en el contrato de Soroban. La aplicación web recalcula
 
 ---
 
-## 5. Documentación y Recursos del Proyecto
+## 5. De app a protocolo: `@chaski/sdk`
+
+La web de Chaski es **un integrador más** del contrato. Toda la lógica on-chain vive en [`packages/chaski-sdk`](packages/chaski-sdk), un SDK TypeScript **agnóstico de wallet**: recibe una función `signer`, así que sirve con Freighter, una wallet embebida o un backend con Keypair.
+
+```ts
+import { Chaski } from "@chaski/sdk";
+
+const chaski = new Chaski({ signer });                                       // Freighter, wallet embebida o Keypair
+const { value: orderId } = await chaski.createOrder({ seller, amount: 50 }); // link de pago: chaski.payUrl(orderId, url)
+await chaski.fund(orderId, buyer);                                            // el dinero queda en custodia del contrato
+```
+
+- **Web (navegador):** [`web/lib/stellar.ts`](web/lib/stellar.ts) conecta Freighter como signer.
+- **Backend (Node):** [`web/scripts/sdk-demo.ts`](web/scripts/sdk-demo.ts) firma con Keypair y ejecuta el flujo completo; es la orden #6 de la tabla de arriba.
+- Documentación de la API: [`packages/chaski-sdk/README.md`](packages/chaski-sdk/README.md).
+
+---
+
+## 6. Estado: Hoy · Próximo · Visión
+
+Separamos lo que funciona hoy de lo que es hoja de ruta.
+
+### ✅ Hoy (funcionando en testnet)
+- Contrato escrow en Soroban: crear, pagar, enviar con hash de evidencia, confirmar, liberación automática por plazo, reembolso por no envío, disputa y arbitraje, reputación on-chain.
+- Web con link de pago compartible, vistas por rol y panel de árbitro.
+- Evidencia verificable: foto + guía off-chain (Neon) y su SHA-256 on-chain.
+- `@chaski/sdk` v0.1, usado por la web y probado desde Node.
+- Token configurable por orden: el demo usa XLM de testnet; el mismo contrato acepta USDC (SAC).
+
+### 🔜 Próximo (piloto)
+- **Onboarding sin cripto:** wallets embebidas con login social o passkeys y comisiones patrocinadas. Evaluamos [Pollar](https://pollar.xyz), un SDK de wallets embebidas para Stellar, que se conectaría como `signer` del SDK.
+- **Entrada y salida en bolivianos:** rampa Bs ↔ USDC vía QR bancario con un anchor o partner local (por confirmar).
+- **Contrato v2:** comisión on-chain (`fee_bps`), árbitro por integrador, referencia externa del pedido, órdenes en `persistent` storage y códigos de error tipados.
+- **SDK para terceros:** publicar en npm, webhooks y API keys.
+- Piloto con 20 vendedores de Marketplace y USDC en mainnet.
+
+### 🔭 Visión (motor de pagos condicionados)
+El contrato no sabe qué custodia: el mismo motor sirve para **pagos por hitos** (freelance, obras), **remesas con destino** (colegio, salud) y **ahorro grupal tipo pandero/vaquita** con custodia neutral. No conocemos una implementación de vaquita on-chain pensada para el mercado boliviano.
+
+---
+
+## 7. Documentación y Recursos del Proyecto
 
 - 📑 **[Pitch Deck de 8 Slides](docs/deck.md):** Estructura completa de la presentación con datos de validación y modelo de negocio.
 - 🎬 **[Guion del Video Demo (3 min)](docs/video.md):** Guion cronometrado minuto a minuto para la grabación de la entrega.
-- 🌐 **[Visión de Producto y SDK (@chaski/sdk)](docs/chaski-protocol-vision.md):** Arquitectura del protocolo, ahorro grupal (*Vaquita on-chain*), pagos por hitos y alianzas (Pollar, Likida, Trestlework).
+- 🌐 **[Visión de Producto y SDK (@chaski/sdk)](docs/chaski-protocol-vision.md):** Arquitectura del protocolo, ahorro grupal (*Vaquita on-chain*), pagos por hitos y posibles alianzas (Pollar, Likida, Trestlework).
 - 📊 **[Análisis Pros y Contras MVP](docs/analisis-pros-contras-mvp.md):** Comparativa frente a soluciones bancarias y marketplaces locales.
 - 🎙️ **[Registro de Entrevistas de Validación](docs/entrevistas.md):** Transcripciones verbatim y hojas de trabajo de las 6 entrevistas.
 
 ---
 
-## 6. Instalación y Ejecución Local
+## 8. Instalación y Ejecución Local
 
 ### Prerrequisitos
 - Node.js 18+
@@ -142,3 +190,18 @@ npm run dev
 ```
 
 Abrí [http://localhost:3000](http://localhost:3000) en tu navegador con Freighter conectado.
+
+> `npm install` copia `packages/chaski-sdk` dentro de `web/node_modules` (ver `web/.npmrc`). Si editás el SDK, corré `npm run sdk:sync` para refrescarlo.
+
+### Probar el SDK desde Node (sin navegador)
+```bash
+cd web
+CHASKI_SELLER_SECRET=S... CHASKI_BUYER_SECRET=S... npx tsx scripts/sdk-demo.ts
+```
+
+### Contrato
+```bash
+cd contracts/escrow
+cargo test              # tests unitarios
+stellar contract build  # compila el WASM
+```

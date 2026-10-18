@@ -28,7 +28,7 @@ Capas del ecosistema:
 
   [INFRAESTRUCTURA STELLAR]
   Stellar Network | Soroban | USDC (SAC) | XLM | Anchors
-  Pollar (on/off-ramp Bolivianos <-> USDC en Bolivia)
+  Wallets embebidas (ej. Pollar) | Rampa Bs <-> USDC (partner local por confirmar)
 
 ---
 
@@ -40,12 +40,14 @@ Comprador + vendedor en distintas ciudades, envio por encomienda.
 El contrato bloquea fondos hasta que el paquete llega.
 
 - Integradores target: Likida, vendedores de Facebook Marketplace, WhatsApp
-- Moneda: XLM o USDC. Con Pollar: usuario paga Bs, contrato recibe USDC.
+- Moneda: XLM o USDC (el token es un parametro de cada orden).
+- Futuro: el usuario paga en Bs por QR y una rampa local lo convierte a USDC.
 
 ### 2.2 Vaquita / Pandero — ahorro grupal on-chain
 
 Problema: Las vaquitas en Bolivia/LATAM usan confianza personal.
-Si el organizador desaparece, todos pierden. NO EXISTE EN STELLAR.
+Si el organizador desaparece, todos pierden. No conocemos una implementacion
+on-chain pensada para el mercado boliviano.
 
 Solucion Chaski: tipo de orden N-de-N multifirma. El contrato solo
 transfiere al beneficiario del turno cuando todos depositaron su cuota.
@@ -55,7 +57,7 @@ transfiere al beneficiario del turno cuando todos depositaron su cuota.
     Turno 2: B recibe 200 USDC cuando A, C, D depositaron.
   El organizador no puede robar el pozo. El contrato es custodio neutral.
 
-Estado: No implementado en Stellar aun. Oportunidad real de ser primeros.
+Estado: no implementado en Chaski (vision). Oportunidad local por validar.
 
 ### 2.3 Pagos freelance por entrega (Trestlework-style)
 
@@ -74,7 +76,7 @@ Problema: migrante en Espana envia dinero pero no controla el uso.
 
 Solucion: escrow con condicion. Solo libera cuando el beneficiario
 muestra comprobante de colegio/alquiler/farmacia (hash on-chain).
-Retira en Bs via Pollar.
+Retira en Bs via una rampa local.
 
 ### 2.5 Pagos por avance de obra / hitos
 
@@ -88,9 +90,18 @@ on-chain) se libera un porcentaje. Disputa -> arbitro.
 
 ## 3. API del SDK
 
-No hay base de datos propia ni custodia. El estado vive en Stellar.
+Sin custodia de la plataforma: el dinero y el estado viven en Stellar. La web
+guarda off-chain (Neon) solo datos de contexto: titulo, foto y motivo de disputa.
 
-  chaski.escrow.create({ token, amount, seller, shipDeadlineSecs, confirmWindowSecs })
+HOY (v0.1, packages/chaski-sdk, probado en testnet):
+
+  const chaski = new Chaski({ signer })   // Freighter, wallet embebida o Keypair
+  chaski.createOrder({ seller, amount, token?, shipDeadlineSecs?, confirmWindowSecs? })
+  chaski.fund / markShipped / confirmReceived / claimAfterTimeout
+  chaski.refundIfNotShipped / openDispute / resolveDispute / getOrder / getReputation
+
+VISION (requiere nuevos modulos de contrato):
+
   chaski.vaquita.create({ token, quotaAmount, participants[], cycleDays })
   chaski.milestones.create({ token, totalAmount, milestones[] })
 
@@ -113,11 +124,13 @@ Con integracion Likida: escala sin costo marginal.
 ## 5. Partners e integraciones
 
 Pollar (pollar.xyz)
-  Rol: on-ramp/off-ramp fiat. Bs (QR bancario) <-> USDC en Stellar.
-  Estado MVP: mencionado en el pitch. Sin integracion en codigo aun.
+  Rol: SDK de wallets embebidas para Stellar (login social, smart wallets con
+  passkey, patrocinio de comisiones). Se conectaria como `signer` de @chaski/sdk.
+  Rampa Bs (QR) <-> USDC: por confirmar con ellos.
+  Estado MVP: sin integracion en codigo aun.
 
 Likida (likidaapp.com)
-  Rol: marketplace boliviano con miles de usuarios activos.
+  Rol: marketplace boliviano con retencion de fondos centralizada.
   Propuesta: integrar SDK Chaski. Ventaja: elimina riesgo regulatorio
   de captacion de fondos y costo de custodia central.
 
@@ -130,8 +143,9 @@ Trestlework (trestlework.io)
 ## 6. Hoja de ruta post-hackathon
 
 Fase 1 (sem 1-4):  Mainnet USDC + piloto 20 vendedores Bolivia
-Fase 2 (sem 5-8):  Integracion Pollar (Bs -> USDC -> escrow -> Bs)
-Fase 3 (mes 3-4):  @chaski/sdk en npm + primer integrador externo
+Fase 2 (sem 5-8):  Wallet embebida (ej. Pollar) + rampa Bs <-> USDC con partner local
+Fase 3 (mes 3-4):  Contrato v2 (fee on-chain, arbitro por integrador) + @chaski/sdk en npm
+                   + primer integrador externo
 Fase 4 (mes 5-6):  Vaquita on-chain + Hitos + Arbitro como servicio
 Fase 5 (mes 7-12): Expansion LATAM + anchors locales + USDC internacional
 

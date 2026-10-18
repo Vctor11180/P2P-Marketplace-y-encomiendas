@@ -5,7 +5,7 @@
 
 **Hipótesis:** al menos 3 de 5 personas que compran o venden por redes han sido estafadas o han dejado de concretar una compra por desconfianza.
 
-**Resultado:** **6 de 6 (100%) confirman la hipótesis.** Se validó tanto la desconfianza crónica y cancelación de tratos como un caso de **estafa real consumada** (pago de 50% de anticipo con bloqueo inmediato en redes).
+**Resultado:** **Hipótesis confirmada: 4 de 6** fueron estafados o dejaron de concretar compras por desconfianza (Alejandro, Daniel, Julieta y Luna), por encima de la meta de 3 de 5. Los otros 2 (Belén y Kevin) compran, pero con miedo y con mecanismos de protección como pagar solo el 50%. Incluye un caso de **estafa real consumada** (pago del 50% de anticipo con bloqueo inmediato en redes).
 
 ---
 
@@ -25,7 +25,7 @@
 - **6 de 6 (100%)** experimentan desconfianza o miedo al transferir a desconocidos en Facebook/WhatsApp.
 - **6 de 6 (100%)** usarían un protocolo que congele el dinero de forma neutral hasta la entrega física de la encomienda.
 - **100% de disposición de pago:** Aceptan pagar 1%–2% de comisión a cambio de eliminar el riesgo de fraude.
-- **Consenso sobre el vendedor (80%):** Sostienen que el vendedor debe asumir el fee como señal de legitimidad y garantía de entrega.
+- **4 de 6 (67%) sostienen que el vendedor debe asumir el fee** como señal de legitimidad y garantía de entrega (Belén, Daniel, Julieta y Kevin). Alejandro propone dividirlo 50/50 y Luna no especificó.
 - **Validación de Stablecoins (USDC/Stellar):** Quienes conocen USDT/USDC destacan que la trazabilidad y registro inmutable en blockchain da mucha más seguridad que transferencias bancarias privadas.
 
 **Cita de apertura para el Pitch y Video:**
