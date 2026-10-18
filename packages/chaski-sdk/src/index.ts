@@ -293,13 +293,22 @@ export class Chaski {
       throw new ChaskiError("La red rechazó la transacción.", sent.errorResult);
     }
 
-    let status = await this.server.getTransaction(sent.hash);
-    for (let i = 0; status.status === "NOT_FOUND" && i < 30; i++) {
+    // La tx ya fue enviada: un corte de red al consultar su estado no significa que falló,
+    // así que reintentamos en vez de propagar el "Failed to fetch".
+    let status: rpc.Api.GetTransactionResponse | undefined;
+    for (let i = 0; i < 30; i++) {
+      try {
+        status = await this.server.getTransaction(sent.hash);
+        if (status.status !== "NOT_FOUND") break;
+      } catch {
+        // error transitorio del RPC; se reintenta
+      }
       await new Promise((r) => setTimeout(r, 1000));
-      status = await this.server.getTransaction(sent.hash);
     }
-    if (status.status === "FAILED") throw new ChaskiError(`La transacción falló on-chain (${sent.hash}).`);
-    if (status.status !== "SUCCESS") throw new ChaskiError(`Tiempo de espera agotado (${sent.hash}).`);
+    if (status?.status === "FAILED") throw new ChaskiError(`La transacción falló on-chain (${sent.hash}).`);
+    if (status?.status !== "SUCCESS") {
+      throw new ChaskiError(`No se pudo confirmar a tiempo; revisá ${this.txUrl(sent.hash)} antes de reintentar.`);
+    }
 
     return {
       txHash: sent.hash,
