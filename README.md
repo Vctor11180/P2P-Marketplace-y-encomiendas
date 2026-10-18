@@ -205,3 +205,12 @@ cd contracts/escrow
 cargo test              # tests unitarios
 stellar contract build  # compila el WASM
 ```
+
+---
+
+## 9. Equipo
+
+| Integrante | Rol |
+|---|---|
+| **Victor Hugo Murillo Siles** | Desarrollador Full Stack: contrato Soroban (Rust), `@chaski/sdk`, backend (Neon) y despliegue en testnet/Vercel. |
+| **Ronald Augusto Rodríguez Serrano** | Desarrollador Frontend y Comunicación: interfaz web, video y pitch; condujo las 6 entrevistas de validación. |

@@ -89,7 +89,7 @@ Grabar cada pantalla por separado y cortar la espera de la red (dejar solo el mo
 
 ## 5 · Modelo, SDK y cierre (2:25 – 3:00)
 
-**Visual:** comisión **1–1,5 %** vs **perder el 50–100 %** en una estafa → snippet de `@chaski/sdk` (README, sección 5) y la terminal con `npx tsx scripts/sdk-demo.ts` mostrando los links → pantalla final con logo, URL y equipo.
+**Visual:** comisión **1–1,5 %** vs **perder el 50–100 %** en una estafa → snippet de `@chaski/sdk` (README, sección 5) y la terminal con `npx tsx scripts/sdk-demo.ts` mostrando los links → pantalla final con logo, URL y equipo: **Victor Hugo Murillo Siles** (Full Stack) y **Ronald Augusto Rodríguez Serrano** (Frontend y Comunicación).
 
 **Voz:**
 > "Cobramos entre 1 y 1,5 % del monto protegido solo cuando la compra se completa: mucho menos que perder la mitad en una estafa. Y Chaski no es solo esta web: es un SDK que cualquier marketplace o empresa de encomiendas puede integrar en pocas líneas. Lo siguiente: login sin cripto desde el celular y pago en bolivianos con un partner local. Chaski: el mensajero que lleva la confianza de una ciudad a otra."

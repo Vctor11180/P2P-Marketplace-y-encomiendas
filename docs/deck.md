@@ -92,9 +92,8 @@
 ## Slide 8: Equipo y Plan de Ejecución
 **Título:** Roadmap de lanzamiento
 - **Equipo:**
-  - [Nombre 1] — Smart Contracts & Blockchain Architecture (Stellar / Soroban)
-  - [Nombre 2] — Fullstack Development & UX (Next.js / Cloud)
-  - [Nombre 3] — Producto, Operaciones y Validación de Mercado
+  - **Victor Hugo Murillo Siles** — Desarrollador Full Stack: contrato Soroban (Rust), `@chaski/sdk`, backend y despliegue.
+  - **Ronald Augusto Rodríguez Serrano** — Desarrollador Frontend y Comunicación: interfaz web, video y pitch; condujo las 6 entrevistas.
 - **Próximos 60 días:**
   1. Piloto cerrado con 20 comerciantes activos de Facebook Marketplace / WhatsApp en La Paz, Cochabamba y Santa Cruz.
   2. Onboarding sin cripto (wallet embebida, ej. Pollar) y rampa Bs ↔ USDC por QR con un partner local.
