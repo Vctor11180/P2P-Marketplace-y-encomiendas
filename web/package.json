@@ -6,9 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "sdk:sync": "node -e \"require('fs').rmSync('node_modules/@chaski',{recursive:true,force:true})\" && npm install"
   },
   "dependencies": {
+    "@chaski/sdk": "file:../packages/chaski-sdk",
     "@neondatabase/serverless": "^1.2.0",
     "@stellar/freighter-api": "^6.0.1",
     "@stellar/stellar-sdk": "^17.2.1",
